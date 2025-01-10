@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <envs>
+        <env name="VM_COMMON_DIR" value="%ProgramData%\_VM"/>
+        <env name="TOOL_LIST_DIR" value="%UserProfile%\Desktop\Tools"/>
+        <env name="RAW_TOOLS_DIR" value="%SystemDrive%\Tools"/>
+    </envs>
+    <packages>
+        <!-- packages from default repo -->
+        <package name="dotnet3.5"/> <!-- To run old .NET binaries -->
+        <package name="git"/>
+        <package name="vcredist-all"/>
+
+        <!-- packages from VM repo -->
+        <package name="7zip.vm"/>
+        <package name="blobrunner.vm"/>
+        <package name="blobrunner64.vm"/>
+        <package name="capa.vm"/>
+        <package name="confuserex.vm"/>
+        <package name="die.vm"/>
+        <package name="dnspyex.vm"/>
+        <package name="explorersuite.vm"/>
+        <package name="fakenet-ng.vm"/>
+        <package name="floss.vm"/>
+        <package name="googlechrome.vm"/>
+        <package name="ilspy.vm"/>
+        <package name="internet_detector.vm"/>
+        <package name="invokedosfuscation.vm"/>
+        <package name="invokeobfuscation.vm"/>
+        <package name="libraries.python3.vm"/>
+        <package name="microsoft-office.vm"/>
+        <package name="nasm.vm"/>
+        <package name="pesieve.vm"/>
+        <package name="resourcehacker.vm"/>
+        <package name="sysinternals.vm"/>
+        <package name="systeminformer.vm"/>
+        <package name="upx.vm"/>
+        <package name="visualstudio.vm"/>
+        <package name="vscode.extension.jupyter.vm"/>
+        <package name="vscode.extension.python.vm"/>
+        <package name="vscode.vm"/>
+        <package name="windbg.vm"/>
+        <package name="windows-terminal.vm"/>
+        <package name="wireshark.vm"/>
+        <package name="x64dbg.plugin.dbgchild.vm"/>
+        <package name="x64dbg.plugin.ollydumpex.vm"/>
+        <package name="x64dbg.plugin.scyllahide.vm"/>
+        <package name="x64dbg.plugin.x64dbgpy.vm"/>
+        <package name="x64dbg.vm"/>
+        <package name="yara.vm"/>
+    </packages>
+    <apps>
+        <!--
+        INFO:
+        Removes installed AppX packages. Try:
+        $packages = Get-AppxPackage
+        $packages.Name
+        FORMAT:
+        <app name="APP_NAME"/>
+        -->
+    </apps>
+    <services>
+        <!--
+        INFO:
+        Sets Services to "Manual" startup type. Try:
+        $services = Get-WmiObject -Query "SELECT * FROM Win32_Service WHERE StartMode='Auto'" | Get-Service
+        $services.Name
+        FORMAT:
+        <service name="SERVICE_NAME"/>
+        -->
+    </services>
+    <tasks>
+        <!--
+        INFO:
+        Disables Scheduled Tasks. Try:
+        $tasks = Get-ScheduledTask
+        $tasks.TaskName
+        FORMAT:
+        <task name="DESCRIPTIVE_NAME" value="TASK_NAME"/>
+        -->
+    </tasks>
+    <path-items>
+        <!--
+        INFO:
+        Removes files and folders from the system
+        FORMAT:
+        <path-item name="DESCRIPTIVE_NAME" type="dir/file" path="DIR_PATH/FILE_PATH"/>
+        -->
+    </path-items>
+    <registry-items>
+        <!--
+        INFO:
+        Makes custom edits to the registry
+        FORMAT:
+        <registry-item name="DESCRIPTIVE_NAME" path="REG_PATH" value="REG_VALUE" type="TYPE" data="NEW_DATA"/>
+        -->
+        <registry-item name="Show full directory path in Explorer title bar" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState" value="FullPath" type="DWord" data="1"/>
+        <registry-item name="Show known file extensions" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" value="HideFileExt" type="DWord" data="0"/>
+        <registry-item name="Show hidden files" path="HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" value="Hidden" type="DWord" data="1"/>
+        <registry-item name="Force DNS requests to always come from requesting process" path="HKLM:\SYSTEM\CurrentControlSet\services\Dnscache" value="Start" type="DWord" data="4" />
+    </registry-items>
+    <custom-items>
+        <!--
+        INFO:
+        Performs custom commands
+        FORMAT:
+        <custom-item name="DESCRIPTIVE_NAME"> <cmd value="PS_COMMAND"/> ... </custom-item>
+        -->
+        <custom-item name="Windows and Office Activation">
+            <cmd value="&amp; ([ScriptBlock]::Create((irm https://get.activated.win))) /HWID /Ohook" />
+        </custom-item>
+    </custom-items>
+</config>
