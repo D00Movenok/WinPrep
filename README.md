@@ -39,5 +39,4 @@ Honestly, this is a custom configuration of [flare-vm](https://github.com/mandia
     Unblock-File .\install.ps1;
     Set-ExecutionPolicy Unrestricted -Force;
     .\install.ps1 -noGui -customConfig "https://raw.githubusercontent.com/D00Movenok/WinPrep/refs/heads/main/config.xml" -customLayout "https://raw.githubusercontent.com/D00Movenok/WinPrep/refs/heads/main/layout.xml" -password "YourPassword";
-
     ```
