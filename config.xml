@@ -13,6 +13,7 @@
 
         <!-- packages from VM repo -->
         <package name="7zip.vm"/>
+        <package name="apimonitor.vm"/>
         <package name="blobrunner.vm"/>
         <package name="blobrunner64.vm"/>
         <package name="capa.vm"/>
@@ -21,15 +22,18 @@
         <package name="dnspyex.vm"/>
         <package name="explorersuite.vm"/>
         <package name="fakenet-ng.vm"/>
+        <package name="fiddler.vm"/>
         <package name="floss.vm"/>
         <package name="googlechrome.vm"/>
         <package name="ilspy.vm"/>
+        <package name="ipython.vm"/>
         <package name="internet_detector.vm"/>
         <package name="invokedosfuscation.vm"/>
         <package name="invokeobfuscation.vm"/>
         <package name="libraries.python3.vm"/>
         <package name="microsoft-office.vm"/>
         <package name="nasm.vm"/>
+        <package name="pdbresym.vm"/>
         <package name="pesieve.vm"/>
         <package name="resourcehacker.vm"/>
         <package name="sysinternals.vm"/>
